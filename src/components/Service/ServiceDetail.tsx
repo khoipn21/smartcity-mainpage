@@ -139,7 +139,7 @@ const ServiceDetail: React.FC = () => {
 
 	const handleMarkVisit = async () => {
 		try {
-			const response = await api.post(`/services/${serviceId}/visit`);
+			await api.post(`/services/${serviceId}/visit`);
 
 			// Update visit status and date immediately
 			setHasVisited(true);
@@ -184,6 +184,7 @@ const ServiceDetail: React.FC = () => {
 
 	return (
 		<div className="max-w-7xl mx-auto p-4">
+			{error && <div className="text-red-600 mb-4">{error}</div>}
 			{service ? (
 				<>
 					{/* Main Content Section */}
@@ -321,7 +322,7 @@ const ServiceDetail: React.FC = () => {
 											precision={0.5}
 											getLabelText={getLabelText}
 											onChange={(event, newValue) => {
-												setRating(newValue);
+												setRating(newValue ?? 0);
 											}}
 											onChangeActive={(event, newHover) => {
 												setHover(newHover);

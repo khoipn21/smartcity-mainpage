@@ -34,7 +34,7 @@ const CityList: React.FC = () => {
 			const uniqueCountries = Array.from(
 				new Set(response.data.map((city: City) => city.country)),
 			).sort();
-			setCountries(uniqueCountries);
+			setCountries(uniqueCountries as string[]);
 		};
 		fetchCities();
 	}, []);

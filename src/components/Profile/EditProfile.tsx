@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import api from "@api/api";
-import { useStore } from "@store/useStore";
 import {
 	Box,
 	TextField,
@@ -18,7 +17,6 @@ interface UserProfile {
 }
 
 const EditProfile: React.FC = () => {
-	const { user } = useStore();
 	const [profile, setProfile] = useState<UserProfile | null>(null);
 	const [fullName, setFullName] = useState("");
 	const [email, setEmail] = useState("");
