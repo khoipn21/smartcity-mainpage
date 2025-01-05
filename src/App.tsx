@@ -14,46 +14,51 @@ import EditProfile from "@components/Profile/EditProfile";
 const App: React.FC = () => {
 	return (
 		<Router>
-			<NavBar />
-			<Routes>
-				<Route
-					path="/"
-					element={<LandingPage />}
-				/>
-				<Route
-					path="/cities"
-					element={<CityList />}
-				/>
-				<Route
-					path="/cities/:cityId"
-					element={<CityDetail />}
-				/>
-				<Route
-					path="/services"
-					element={<ServiceList />}
-				/>
-				<Route
-					path="/cities/:cityId/services/:serviceId"
-					element={<ServiceDetail />}
-				/>
-				<Route
-					path="/login"
-					element={<Login />}
-				/>
-				<Route
-					path="/register"
-					element={<Register />}
-				/>
-				<Route
-					path="/profile"
-					element={
-						<ProtectedRoute>
-							<EditProfile />
-						</ProtectedRoute>
-					}
-				/>
-				{/* Add more routes as needed */}
-			</Routes>
+			<div className="min-h-screen bg-gray-50">
+				<NavBar />
+				<main className="pt-16">
+					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+						<Routes>
+							<Route
+								path="/"
+								element={<LandingPage />}
+							/>
+							<Route
+								path="/cities"
+								element={<CityList />}
+							/>
+							<Route
+								path="/cities/:cityId"
+								element={<CityDetail />}
+							/>
+							<Route
+								path="/services"
+								element={<ServiceList />}
+							/>
+							<Route
+								path="/cities/:cityId/services/:serviceId"
+								element={<ServiceDetail />}
+							/>
+							<Route
+								path="/login"
+								element={<Login />}
+							/>
+							<Route
+								path="/register"
+								element={<Register />}
+							/>
+							<Route
+								path="/profile"
+								element={
+									<ProtectedRoute>
+										<EditProfile />
+									</ProtectedRoute>
+								}
+							/>
+						</Routes>
+					</div>
+				</main>
+			</div>
 		</Router>
 	);
 };
