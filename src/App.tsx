@@ -9,7 +9,7 @@ import ServiceDetail from "@components/Service/ServiceDetail";
 import Login from "@components/Auth/Login";
 import Register from "@components/Auth/Register";
 import ProtectedRoute from "@components/common/ProtectedRoute";
-import EditProfile from "@components/Profile/EditProfile";
+import Profile from "@components/Profile/Profile";
 
 const App: React.FC = () => {
 	return (
@@ -51,7 +51,7 @@ const App: React.FC = () => {
 								path="/profile"
 								element={
 									<ProtectedRoute>
-										<EditProfile />
+										<Profile />
 									</ProtectedRoute>
 								}
 							/>
